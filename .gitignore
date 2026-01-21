@@ -1,4 +1,5 @@
 ultralytics_yolov8/
+*env/
 *.rknn
 *.pt
 *.torchscript

@@ -14,8 +14,13 @@ if [ -d "ultralytics_yolov8" ]; then
 fi
 
 echo "🚀 [INFO] ultralytics_yolov8 클론 중..."
-git clone "https://github.com/airockchip/ultralytics_yolov8.git" \
+git clone "https://github.com/airockchip/ultralytics_yolov8.git"  --depth=1 \
     || { echo "❌ [ERROR] ultralytics_yolov8 클론 실패"; exit 1; }
+echo ""
+
+echo "🔗 [INFO] ultralytics_yolov8 의존성 설치 중..."
+pip3 install ~/rknn_converter/ultralytics_yolov8/. \
+    || { echo "❌ [ERROR] ultralytics_yolov8 의존성 설치 실패"; exit 1; }
 echo ""
 
 echo "📂 [INFO] MODEL ($MODEL) 파일 복사 중..."
